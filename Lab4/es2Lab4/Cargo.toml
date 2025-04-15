@@ -1,6 +1,0 @@
-[package]
-name = "es2Lab4"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
