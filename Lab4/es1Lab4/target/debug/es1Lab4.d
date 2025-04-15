@@ -1,0 +1,1 @@
+C:\Users\edoar\Desktop\Programmi\LaboratoriPDS\Lab4\es1Lab4\target\debug\es1Lab4.exe: C:\Users\edoar\Desktop\Programmi\LaboratoriPDS\Lab4\es1Lab4\src\editor.rs C:\Users\edoar\Desktop\Programmi\LaboratoriPDS\Lab4\es1Lab4\src\main.rs

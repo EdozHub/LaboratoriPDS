@@ -3,7 +3,9 @@
 // - you have also to implemment missing functions and fix the code
 // - *** see test test functions in the code for usage examples
 
+use std::fs::File;
 use std::io;
+use std::io::BufRead;
 
 // (1) LineEditor: implement functionality
 pub struct LineEditor {
@@ -12,12 +14,16 @@ pub struct LineEditor {
 
 impl LineEditor {
     pub fn new(s: String) -> Self {
-        unimplemented!()
+        let lines: Vec<String> = s.split("\n").map(|s| s.to_string()).collect();
+        Self { lines }
     }
 
     // create a new LineEditor from a file
     pub fn from_file(file_name: &str) -> Result<Self, io::Error> {
-        unimplemented!();
+        let file = File::open(file_name)?;
+        let reader = io::BufReader::new(file);
+        let lines: Vec<String> = reader.lines().collect::<Result<_, _>>()?;
+        Ok(Self { lines })
     }
 
     pub fn all_lines(&self) -> Vec<&str> {
@@ -34,7 +40,7 @@ impl LineEditor {
 // (2) Match contains the information about the match. Fix the lifetimes
 // repl will contain the replacement.
 // It is an Option because it may be not set yet or it may be skipped
-struct Match {
+/*struct Match {
     pub line: usize,
     pub start: usize,
     pub end: usize,
@@ -208,5 +214,5 @@ fn test_find_iter() {
         println!("{} {} {} {}", m.line, m.start, m.end, m.text);
 
     }
-}
+}*/
 
