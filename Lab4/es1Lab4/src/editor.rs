@@ -45,16 +45,14 @@ impl LineEditor {
     }
 }
 
-
-
 // (2) Match contains the information about the match. Fix the lifetimes
 // repl will contain the replacement.
 // It is an Option because it may be not set yet or it may be skipped
-/*struct Match {
+struct Match<'a> {
     pub line: usize,
     pub start: usize,
     pub end: usize,
-    pub text: &str,
+    pub text: &'a str,
     pub repl: Option<String>,
 }
 
@@ -79,17 +77,16 @@ fn find_example(lines: &Vec<&str>, pattern: &str) -> Vec<Match> {
 
 // (3) Fix the lifetimes of the FindReplace struct
 // (4) implement the Finder struct
-struct FindReplace {
-    lines: Vec<&str>,
+struct FindReplace<'a> {
+    lines: Vec<&'a str>,
     pattern: String,
-    matches: Vec<Match>,
+    matches: Vec<Match<'a>>,
 }
 
 impl FindReplace {
     pub fn new(lines: Vec<&str>, pattern: &str) -> Self {
         unimplemented!()
     }
-
     // return all the matches
     pub fn matches(&self) -> &Vec<Match> {
         unimplemented!()
@@ -105,7 +102,7 @@ impl FindReplace {
 
 //(5) how FindReplace should work together with the LineEditor in order
 // to replace the matches in the text
-#[test]
+/*#[test]
 fn test_find_replace() {
     let s = "Hello World.\nA second line full of text.";
     let mut editor = LineEditor::new(s.to_string());
