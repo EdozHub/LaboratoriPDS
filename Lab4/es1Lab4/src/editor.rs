@@ -31,7 +31,17 @@ impl LineEditor {
     }
 
     pub fn replace(&mut self, line: usize, start: usize, end: usize, subst: &str) {
-        unimplemented!();
+        if line > self.lines.len(){
+            return;
+        }
+        if start < 0 || end > self.lines.len() {
+            return;
+        }
+        let mut new_line = String::new();
+        new_line.push_str(&self.lines[line][0..start]);
+        new_line.push_str(subst);
+        new_line.push_str(&self.lines[line][end..]);
+        self.lines[line] = new_line;
     }
 }
 
