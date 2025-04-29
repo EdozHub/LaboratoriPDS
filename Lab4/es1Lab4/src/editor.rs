@@ -58,7 +58,7 @@ struct Match<'a> {
 
 // use the crate "regex" to find the pattern and its method find_iter for iterating over the matches
 // modify if necessary, this is just an example for using a regex to find a pattern
-fn find_example(lines: &Vec<&str>, pattern: &str) -> Vec<Match> {
+fn find_example<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>> {
     let mut matches = Vec::new();
     let re = regex::Regex::new(pattern).unwrap();
     for (line_idx, line) in lines.iter().enumerate() {
@@ -83,26 +83,32 @@ struct FindReplace<'a> {
     matches: Vec<Match<'a>>,
 }
 
-impl FindReplace {
+impl FindReplace<'_> {
     pub fn new(lines: Vec<&str>, pattern: &str) -> Self {
-        unimplemented!()
+        let mut fr = FindReplace{
+            lines: lines.clone(),
+            pattern: pattern.to_string(),
+            matches: Vec::new(),
+        };
+        fr.matches = find_example(&lines, &pattern);
+        fr
     }
     // return all the matches
     pub fn matches(&self) -> &Vec<Match> {
-        unimplemented!()
+        &self.matches
     }
 
     // apply a function to all matches and allow to accept them and set the repl
     // useful for promptig the user for a replacement
     pub fn apply(&mut self, fun: impl Fn(&mut Match) -> bool) {
-        unimplemented!()
+
     }
 }
 
 
 //(5) how FindReplace should work together with the LineEditor in order
 // to replace the matches in the text
-/*#[test]
+#[test]
 fn test_find_replace() {
     let s = "Hello World.\nA second line full of text.";
     let mut editor = LineEditor::new(s.to_string());
@@ -119,9 +125,9 @@ fn test_find_replace() {
 
     // now let's replace the matches
     // why this loop won't work?
-    for m: Match in finder.matches() {
-        editor.replace(/* add match */);
-    }
+    //for m: Match in finder.matches() {
+    //    editor.replace(/* add match */);
+    //}
 
     // alternate method: why this one works?
 
@@ -143,7 +149,7 @@ fn test_find_replace() {
 // each call to next() will return the next match
 // this is a naive implementation of an Iterarator
 
-#[derive(Debug, Clone, Copy)]
+/*#[derive(Debug, Clone, Copy)]
 struct FinderPos {
     pub line: usize,
     pub offset: usize,
