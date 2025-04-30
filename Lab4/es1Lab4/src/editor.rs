@@ -48,6 +48,7 @@ impl LineEditor {
 // (2) Match contains the information about the match. Fix the lifetimes
 // repl will contain the replacement.
 // It is an Option because it may be not set yet or it may be skipped
+#[derive(Clone)]
 struct Match<'a> {
     pub line: usize,
     pub start: usize,
@@ -149,29 +150,44 @@ fn test_find_replace() {
 // each call to next() will return the next match
 // this is a naive implementation of an Iterarator
 
-/*#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy)]
 struct FinderPos {
     pub line: usize,
     pub offset: usize,
 }
 
-struct LazyFinder {
-    lines: Vec<&str>,
+struct LazyFinder<'a> {
+    lines: Vec<&'a str>,
     pattern: String,
     pos: Option<FinderPos>,
 }
 
-impl LazyFinder {
-    pub fn new(lines: Vec<&str>, pattern: &str) -> Self {
-        unimplemented!()
+impl<'a> LazyFinder<'a> {
+    pub fn new(lines: Vec<&'a str>, pattern: &'a str) -> Self {
+        let mut lf = LazyFinder{
+            lines: lines.clone(),
+            pattern: pattern.to_string(),
+            pos: None,
+        };
+        let m = find_example(&lines, &pattern);
+        lf.pos.unwrap().offset = 0;
+        lf.pos.unwrap().line = m[0].line;
+        lf
     }
 
-    pub fn next(&mut self) -> Option<Match> {
+    pub fn next(&'a mut self) -> Option<Match<'a>> {
         // remember:
         // return None if there are no more matches
         // return Some(Match) if there is a match
         // each time save the position of the match for the next call
-        unimplemented!()
+        let mv = find_example(&self.lines, &self.pattern);
+        if mv.is_empty() {
+            return None
+        }
+        self.pos.unwrap().offset += 1;
+        let index = self.pos.unwrap().offset;
+        self.pos.unwrap().line = mv[index].line;
+        Some(mv[index].clone())
     }
 }
 
@@ -192,7 +208,7 @@ fn test_lazy_finder() {
 
 
 // (8) now you have everything you need to implement the real Iterator
-
+/*
 struct FindIter {
     lines: Vec<&str>,
     pattern: String,
