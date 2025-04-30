@@ -58,7 +58,7 @@ struct Match<'a> {
 
 // use the crate "regex" to find the pattern and its method find_iter for iterating over the matches
 // modify if necessary, this is just an example for using a regex to find a pattern
-fn find_example<'a>(lines: &'a Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>> {
+fn find_example<'a, 'b>(lines: &'b Vec<&'a str>, pattern: &'a str) -> Vec<Match<'a>> {
     let mut matches = Vec::new();
     let re = regex::Regex::new(pattern).unwrap();
     for (line_idx, line) in lines.iter().enumerate() {
@@ -83,14 +83,14 @@ struct FindReplace<'a> {
     matches: Vec<Match<'a>>,
 }
 
-impl FindReplace<'_> {
-    pub fn new(lines: Vec<&str>, pattern: &str) -> Self {
+impl<'a> FindReplace<'a>{
+    pub fn new(lines: Vec<&'a str>, pattern: &'a str) -> FindReplace<'a> {
         let mut fr = FindReplace{
             lines: lines.clone(),
             pattern: pattern.to_string(),
             matches: Vec::new(),
         };
-        fr.matches = find_example(&lines, &pattern);
+        fr.matches = find_example(&(fr.lines.clone()), pattern);
         fr
     }
     // return all the matches
@@ -101,7 +101,7 @@ impl FindReplace<'_> {
     // apply a function to all matches and allow to accept them and set the repl
     // useful for promptig the user for a replacement
     pub fn apply(&mut self, fun: impl Fn(&mut Match) -> bool) {
-
+        self.matches.iter_mut().for_each(|m| {fun(m);});
     }
 }
 
@@ -131,14 +131,14 @@ fn test_find_replace() {
 
     // alternate method: why this one works?
 
-    //let mut subs = Vec::new();
-    //for m in finder.matches() {
-    //    subs.push( /** add match if repl is set */ );
-    //}
+    let mut subs = Vec::new();
+    for m in finder.matches() {
+        //subs.push( /** add match if repl is set */);
+    }
 
-    //for (line, start, end, subst) in subs {
-    //    editor.replace(line, start, end, subst);
-    //}
+    for (line, start, end, subst) in subs {
+        editor.replace(line, start, end, subst);
+    }
 
 }
 
