@@ -75,7 +75,7 @@ pub mod simple_even_iter {
 
 }
 
-/*pub mod even_iter {
+pub mod even_iter {
     // (4) more adavanced: implement for all integer types
     // => install the external crate "num" to have some Traits identifying all number types
     use num;
@@ -96,7 +96,18 @@ pub mod simple_even_iter {
         type Item = U;
 
         fn next(&mut self) -> Option<Self::Item> {
-            unimplemented!()
+            loop{
+                match self.iter.next() {
+                    Some(x) => {
+                        if x.is_even() {
+                            return Some(x);
+                        }
+                    }
+                    None => {
+                        return None;
+                    }
+                }
+            }
         }
     }
 
@@ -109,7 +120,6 @@ pub mod simple_even_iter {
             println!("i: {}", i);
         }
     }
-
 }
 
 // finally let's implement the grep command
@@ -130,7 +140,14 @@ struct Match {
 fn test_walk_dir() {
     let wdir = walkdir::WalkDir::new("/tmp");
     for entry in wdir.into_iter() {
-        // print the name of the file or an error message
+        match entry{
+            Ok(entry) => {
+                println!("{:?}", entry);
+            }
+            Err(entry) => {
+                println!("Error: {}", entry);
+            }
+        }
     }
 }
 
@@ -166,7 +183,7 @@ fn test_grep_iter() {
         }
     }
 }
-
+/*
 // (5) add grep() to IntoIter  (see the first example in EvenIter for i32)
 
 trait Grep {
@@ -184,6 +201,6 @@ fn test_grep() {
             Err(e) => { println!("Error: {}", e); }
         }
     }
-}*/
-
+}
+*/
 
