@@ -46,7 +46,7 @@ pub mod simple_even_iter {
     }
 
     // (2) now let's add the adapter to all Iterator<Item=i32> (adavanced)
-    /*trait AddEvenIter: Iterator
+    trait AddEvenIter: Iterator
     where
         Self: Sized
     {
@@ -59,6 +59,11 @@ pub mod simple_even_iter {
 
     // (3) add here the generic implemention, you can supply it for all the iterators
     // impl .... ?
+    impl<I> AddEvenIter for I
+    where
+        I: Iterator<Item=i32>
+    {
+    }
 
     #[test]
     fn test_adapter() {
@@ -70,7 +75,7 @@ pub mod simple_even_iter {
 
 }
 
-pub mod even_iter {
+/*pub mod even_iter {
     // (4) more adavanced: implement for all integer types
     // => install the external crate "num" to have some Traits identifying all number types
     use num;
@@ -178,7 +183,7 @@ fn test_grep() {
             Ok(m) => { println!("File: {}, Line: {}, Text: {}", m.file, m.line, m.text); }
             Err(e) => { println!("Error: {}", e); }
         }
-    }*/
-}
+    }
+}*/
 
 
