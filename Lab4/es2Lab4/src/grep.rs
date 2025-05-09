@@ -168,7 +168,23 @@ impl Iterator for GrepIter {
     type Item = Result<Match, walkdir::Error>;
 
     fn next(&mut self) -> Option<Self::Item> {
-        unimplemented!()
+        loop{
+            match self.inner.next(){
+                Some(Ok(entry))=>{
+                    let path = entry.path();
+                    let file = path.to_str().unwrap_or("unknown").to_string();
+                    let line = 0; // TODO: implement line number
+                    let text = "TODO: implement text".to_string(); // TODO: implement text
+                    return Some(Ok(Match { file, line, text }));
+                }
+                Some(Err(e)) => {
+                    return None;
+                }
+                None => {
+                    return None;
+                }
+            }
+        }
     }
 }
 
@@ -183,11 +199,17 @@ fn test_grep_iter() {
         }
     }
 }
-/*
+
 // (5) add grep() to IntoIter  (see the first example in EvenIter for i32)
 
 trait Grep {
-    //....
+    fn grep(self, pattern: &str) -> GrepIter;
+}
+
+impl Grep for walkdir::IntoIter {
+    fn grep(self, pattern: &str) -> GrepIter {
+        GrepIter::new(self)
+    }
 }
 
 
@@ -202,5 +224,5 @@ fn test_grep() {
         }
     }
 }
-*/
+
 
