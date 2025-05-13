@@ -1,9 +1,21 @@
 use std::collections::HashMap;
 
+pub enum Error{
+    Duplicate,
+    NotFound,
+    Forbidden,
+}
+
 struct Tree{
     children: HashMap<String, Vec<String>>,
     father: HashMap<String, String>,
     switches: HashMap<String, bool>,
+}
+
+impl Clone for Tree{
+    fn clone(&self) -> Tree{
+        return self.clone();
+    }
 }
 
 impl Tree{
@@ -14,7 +26,7 @@ impl Tree{
             switches: HashMap::from([("root".to_string(), false)]),
         }
     }
-    fn add(&mut self, father: &str, node: &str) {
+    fn add(&mut self, father: &str, node: &str){
         self.children
             .entry(father.to_string().clone())
             .or_insert_with(Vec::new)
@@ -27,24 +39,22 @@ impl Tree{
             .insert(node.to_string(), false);
     }
 
-    fn find_children_recursive(self, nodes: Vec<String>, father: &str, mut found: &bool) -> Vec<String>{
-        if !found{
-            return nodes.clone()
+    fn remove(&mut self: Tree, node: &str)->Result<(),Error>{
+        if node == "root" {
+            return Err(Error::Forbidden);
         }
-        let mut children: Vec<String> = Vec::new();
-        children.push(self.children.get(father).unwrap().to_string());
-        if children.is_empty(){
-            found = false;
+
+        if !self.switches.contains_key(node) {
+            return Err(Error::NotFound);
         }
+        let children = match self.children.get(node){
+            Some(children)=> children.clone(),
+            None => vec![]
+        };
         for child in children{
-
+           self.clone().remove(node);
         }
-        nodes
-    }
-
-    fn remove(&self: Tree, node: &str){
-        let mut nodes: Vec<String>=Vec::new();
-        nodes.push(node.to_string());
+        Ok(())
     }
 }
 
