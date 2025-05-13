@@ -27,8 +27,19 @@ impl Tree{
             .insert(node.to_string(), false);
     }
 
-    fn find_relatives_recursive(nodes: Vec<String>, father: &str, found: &bool) -> Vec<String>{
-        unimplemented!()
+    fn find_children_recursive(self, nodes: Vec<String>, father: &str, mut found: &bool) -> Vec<String>{
+        if !found{
+            return nodes.clone()
+        }
+        let mut children: Vec<String> = Vec::new();
+        children.push(self.children.get(father).unwrap().to_string());
+        if children.is_empty(){
+            found = false;
+        }
+        for child in children{
+
+        }
+        nodes
     }
 
     fn remove(&self: Tree, node: &str){
@@ -103,7 +114,5 @@ mod tests {
         assert_eq!(tree.switches.get("M").unwrap(), &false);
         assert_eq!(tree.switches.get("N").unwrap(), &false);
         assert_eq!(tree.switches.get("O").unwrap(), &false);
-
-
     }
 }
