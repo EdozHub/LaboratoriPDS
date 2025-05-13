@@ -52,8 +52,12 @@ impl Tree{
             None => vec![]
         };
         for child in children{
-           self.clone().remove(node);
+            self.clone().remove(node);
         }
+        self.switches.remove(node);
+        let father = self.father.get(node).unwrap().to_string().clone();
+        self.father.remove(node);
+        self.children.get_mut(&father).unwrap().retain(|x| x != &node);
         Ok(())
     }
 }
