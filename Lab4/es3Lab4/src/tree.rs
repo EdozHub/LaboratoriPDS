@@ -43,20 +43,67 @@ mod tests {
     fn build_tree() -> Tree{
         let mut tree = Tree::new();
         tree.add("root", "A");
-        tree.add("A", "B");
+        tree.add("root", "B");
         tree.add("A", "C");
-        tree.add("B", "D");
-        tree.add("B", "E");
-        tree.add("C", "F");
-        tree.add("C", "G");
+        tree.add("A", "D");
+        tree.add("A", "E");
+        tree.add("B", "F");
+        tree.add("B", "G");
+        tree.add("C", "H");
+        tree.add("C", "I");
+        tree.add("D", "J");
+        tree.add("F", "K");
+        tree.add("F", "L");
+        tree.add("F", "M");
+        tree.add("G", "N");
+        tree.add("G", "O");
         tree
     }
     #[test]
     fn test_build_tree() {
         let tree = build_tree();
-        assert_eq!(tree.children.get("root").unwrap(), &vec!["A"]);
-        assert_eq!(tree.children.get("A").unwrap(), &vec!["B", "C"]);
-        assert_eq!(tree.children.get("B").unwrap(), &vec!["D", "E"]);
-        assert_eq!(tree.children.get("C").unwrap(), &vec!["F", "G"]);
+        assert_eq!(tree.children.get("root").unwrap(), &vec!["A", "B"]);
+        assert_eq!(tree.children.get("A").unwrap(), &vec!["C", "D", "E"]);
+        assert_eq!(tree.children.get("B").unwrap(), &vec!["F", "G"]);
+        assert_eq!(tree.children.get("C").unwrap(), &vec!["H", "I"]);
+        assert_eq!(tree.children.get("D").unwrap(), &vec!["J"]);
+        assert_eq!(tree.children.get("F").unwrap(), &vec!["K", "L", "M"]);
+        assert_eq!(tree.children.get("G").unwrap(), &vec!["N", "O"]);
+
+        assert_eq!(tree.father.get("root").unwrap().to_string(), "root".to_string());
+        assert_eq!(tree.father.get("A").unwrap().to_string(), "root".to_string());
+        assert_eq!(tree.father.get("B").unwrap().to_string(), "root".to_string());
+        assert_eq!(tree.father.get("C").unwrap().to_string(), "A".to_string());
+        assert_eq!(tree.father.get("D").unwrap().to_string(), "A".to_string());
+        assert_eq!(tree.father.get("E").unwrap().to_string(), "A".to_string());
+        assert_eq!(tree.father.get("F").unwrap().to_string(), "B".to_string());
+        assert_eq!(tree.father.get("G").unwrap().to_string(), "B".to_string());
+        assert_eq!(tree.father.get("H").unwrap().to_string(), "C".to_string());
+        assert_eq!(tree.father.get("I").unwrap().to_string(), "C".to_string());
+        assert_eq!(tree.father.get("J").unwrap().to_string(), "D".to_string());
+        assert_eq!(tree.father.get("K").unwrap().to_string(), "F".to_string());
+        assert_eq!(tree.father.get("L").unwrap().to_string(), "F".to_string());
+        assert_eq!(tree.father.get("M").unwrap().to_string(), "F".to_string());
+        assert_eq!(tree.father.get("N").unwrap().to_string(), "G".to_string());
+        assert_eq!(tree.father.get("O").unwrap().to_string(), "G".to_string());
+
+        assert_eq!(tree.switches.get("root").unwrap(), &true);
+        assert_eq!(tree.switches.get("A").unwrap(), &true);
+        assert_eq!(tree.switches.get("B").unwrap(), &true);
+        assert_eq!(tree.switches.get("C").unwrap(), &true);
+        assert_eq!(tree.switches.get("D").unwrap(), &true);
+        assert_eq!(tree.switches.get("E").unwrap(), &false);
+        assert_eq!(tree.switches.get("F").unwrap(), &true);
+        assert_eq!(tree.switches.get("G").unwrap(), &true);
+        assert_eq!(tree.switches.get("H").unwrap(), &false);
+        assert_eq!(tree.switches.get("I").unwrap(), &false);
+        assert_eq!(tree.switches.get("J").unwrap(), &false);
+        assert_eq!(tree.switches.get("K").unwrap(), &false);
+        assert_eq!(tree.switches.get("L").unwrap(), &false);
+        assert_eq!(tree.switches.get("M").unwrap(), &false);
+        assert_eq!(tree.switches.get("N").unwrap(), &false);
+        assert_eq!(tree.switches.get("O").unwrap(), &false);
+
+
     }
 }
