@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 
+#[derive(Debug)]
+#[derive(PartialEq)]
 pub enum Error{
     Duplicate,
     NotFound,
@@ -39,25 +41,26 @@ impl Tree{
             .insert(node.to_string(), false);
     }
 
-    fn remove(&mut self: Tree, node: &str)->Result<(),Error>{
+    fn remove(self: &mut Tree, node: &str) -> Result<(), Error> {
         if node == "root" {
             return Err(Error::Forbidden);
         }
+        let children = self.children.get(node).cloned().unwrap_or_default(); // Copia i figli
+        let father = self.father.get(node).cloned(); // Copia il padre
+        for child in children {
+            let res=self.remove(&child)?; // Rimuove ricorsivamente
+        }
+        // Rimuove il nodo dai figli del padre, se il padre esiste
+        if let Some(father) = father.clone(){
+            if let Some(father_children) = self.children.get_mut(&father) {
+                father_children.retain(|child| child != node);
+            }
+        }
 
-        if !self.switches.contains_key(node) {
-            return Err(Error::NotFound);
-        }
-        let children = match self.children.get(node){
-            Some(children)=> children.clone(),
-            None => vec![]
-        };
-        for child in children{
-            self.clone().remove(node);
-        }
-        self.switches.remove(node);
-        let father = self.father.get(node).unwrap().to_string().clone();
+        // Rimuove il nodo dalle mappe
+        self.children.get_mut(&father.unwrap()).unwrap().retain(|child| child != node);
         self.father.remove(node);
-        self.children.get_mut(&father).unwrap().retain(|x| x != &node);
+        self.switches.remove(node);
         Ok(())
     }
 }
@@ -128,5 +131,13 @@ mod tests {
         assert_eq!(tree.switches.get("M").unwrap(), &false);
         assert_eq!(tree.switches.get("N").unwrap(), &false);
         assert_eq!(tree.switches.get("O").unwrap(), &false);
+    }
+
+    #[test]
+    fn test_remove(){
+        let mut tree = build_tree();
+        let res = tree.remove("C");
+        assert_eq!(res, Ok(()));
+        assert_eq!(tree.children.get("A").unwrap(), &vec!["D", "E"]);
     }
 }
