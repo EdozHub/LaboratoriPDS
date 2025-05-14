@@ -11,6 +11,7 @@ pub enum Error{
 struct Tree{
     children: HashMap<String, Vec<String>>,
     father: HashMap<String, String>,
+    is_node: HashMap<String, bool>,
     switches: HashMap<String, bool>,
 }
 
@@ -25,6 +26,7 @@ impl Tree{
         Tree{
             children: HashMap::from([("root".to_string(), Vec::new())]),
             father: HashMap::from([("root".to_string(), "root".to_string())]),
+            is_node: HashMap::from([("root".to_string(), false)]),
             switches: HashMap::from([("root".to_string(), false)]),
         }
     }
@@ -35,10 +37,11 @@ impl Tree{
             .push(node.to_string());
         self.father
             .insert(node.to_string(), father.to_string());
-        self.switches
+        self.is_node
             .insert(father.to_string(), true);
-        self.switches
+        self.is_node
             .insert(node.to_string(), false);
+        self.switches.insert(node.to_string(), false);
     }
 
     fn remove(self: &mut Tree, node: &str) -> Result<(), Error> {
@@ -50,17 +53,18 @@ impl Tree{
         for child in children {
             let res=self.remove(&child)?; // Rimuove ricorsivamente
         }
-        // Rimuove il nodo dai figli del padre, se il padre esiste
-        if let Some(father) = father.clone(){
-            if let Some(father_children) = self.children.get_mut(&father) {
-                father_children.retain(|child| child != node);
-            }
+        if let Some(father) = father.as_ref() {
+                if let Some(father_children) = self.children.get_mut(father) {
+                    father_children.retain(|child| child != node);
+                }
+                if self.children.get(father).map_or(true, |v| v.is_empty()) {
+                    if let Some(value) = self.is_node.get_mut(father) {
+                        *value = false;
+                    }
+                }
         }
-
-        // Rimuove il nodo dalle mappe
-        self.children.get_mut(&father.unwrap()).unwrap().retain(|child| child != node);
         self.father.remove(node);
-        self.switches.remove(node);
+        self.is_node.remove(node);
         Ok(())
     }
 }
@@ -115,22 +119,22 @@ mod tests {
         assert_eq!(tree.father.get("N").unwrap().to_string(), "G".to_string());
         assert_eq!(tree.father.get("O").unwrap().to_string(), "G".to_string());
 
-        assert_eq!(tree.switches.get("root").unwrap(), &true);
-        assert_eq!(tree.switches.get("A").unwrap(), &true);
-        assert_eq!(tree.switches.get("B").unwrap(), &true);
-        assert_eq!(tree.switches.get("C").unwrap(), &true);
-        assert_eq!(tree.switches.get("D").unwrap(), &true);
-        assert_eq!(tree.switches.get("E").unwrap(), &false);
-        assert_eq!(tree.switches.get("F").unwrap(), &true);
-        assert_eq!(tree.switches.get("G").unwrap(), &true);
-        assert_eq!(tree.switches.get("H").unwrap(), &false);
-        assert_eq!(tree.switches.get("I").unwrap(), &false);
-        assert_eq!(tree.switches.get("J").unwrap(), &false);
-        assert_eq!(tree.switches.get("K").unwrap(), &false);
-        assert_eq!(tree.switches.get("L").unwrap(), &false);
-        assert_eq!(tree.switches.get("M").unwrap(), &false);
-        assert_eq!(tree.switches.get("N").unwrap(), &false);
-        assert_eq!(tree.switches.get("O").unwrap(), &false);
+        assert_eq!(tree.is_node.get("root").unwrap(), &true);
+        assert_eq!(tree.is_node.get("A").unwrap(), &true);
+        assert_eq!(tree.is_node.get("B").unwrap(), &true);
+        assert_eq!(tree.is_node.get("C").unwrap(), &true);
+        assert_eq!(tree.is_node.get("D").unwrap(), &true);
+        assert_eq!(tree.is_node.get("E").unwrap(), &false);
+        assert_eq!(tree.is_node.get("F").unwrap(), &true);
+        assert_eq!(tree.is_node.get("G").unwrap(), &true);
+        assert_eq!(tree.is_node.get("H").unwrap(), &false);
+        assert_eq!(tree.is_node.get("I").unwrap(), &false);
+        assert_eq!(tree.is_node.get("J").unwrap(), &false);
+        assert_eq!(tree.is_node.get("K").unwrap(), &false);
+        assert_eq!(tree.is_node.get("L").unwrap(), &false);
+        assert_eq!(tree.is_node.get("M").unwrap(), &false);
+        assert_eq!(tree.is_node.get("N").unwrap(), &false);
+        assert_eq!(tree.is_node.get("O").unwrap(), &false);
     }
 
     #[test]
@@ -139,5 +143,8 @@ mod tests {
         let res = tree.remove("C");
         assert_eq!(res, Ok(()));
         assert_eq!(tree.children.get("A").unwrap(), &vec!["D", "E"]);
+        assert_eq!(tree.is_node.get("A").unwrap(), &true);
+        let res = tree.remove("J");
+        assert_eq!(tree.is_node.get("D").unwrap(), &false);
     }
 }
