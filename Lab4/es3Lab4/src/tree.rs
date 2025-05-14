@@ -15,12 +15,6 @@ struct Tree{
     switches: HashMap<String, bool>,
 }
 
-impl Clone for Tree{
-    fn clone(&self) -> Tree{
-        return self.clone();
-    }
-}
-
 impl Tree{
     fn new() -> Self{
         Tree{
@@ -54,18 +48,27 @@ impl Tree{
             let res=self.remove(&child)?; // Rimuove ricorsivamente
         }
         if let Some(father) = father.as_ref() {
-                if let Some(father_children) = self.children.get_mut(father) {
-                    father_children.retain(|child| child != node);
+            if let Some(father_children) = self.children.get_mut(father) {
+                father_children.retain(|child| child != node);
+            }
+            if self.children.get(father).map_or(true, |v| v.is_empty()) {
+                if let Some(value) = self.is_node.get_mut(father) {
+                    *value = false;
                 }
-                if self.children.get(father).map_or(true, |v| v.is_empty()) {
-                    if let Some(value) = self.is_node.get_mut(father) {
-                        *value = false;
-                    }
-                }
+            }
         }
         self.father.remove(node);
         self.is_node.remove(node);
         Ok(())
+    }
+
+    fn toggle(&mut self, node: &str) -> bool{
+        self.switches.get_mut(node).map(|v| *v = !*v);
+        self.switches.get(node).unwrap().clone()
+    }
+
+    fn peek(&self, node: &str) -> bool{
+        self.switches.get(node).unwrap().clone()
     }
 }
 
@@ -146,5 +149,22 @@ mod tests {
         assert_eq!(tree.is_node.get("A").unwrap(), &true);
         let res = tree.remove("J");
         assert_eq!(tree.is_node.get("D").unwrap(), &false);
+    }
+
+    #[test]
+    fn test_toggle_peek(){
+        let mut tree = build_tree();
+        let res = tree.toggle("A");
+        assert_eq!(tree.switches.get("B").unwrap(), &false);
+        assert_eq!(tree.switches.get("A").unwrap(), &true);
+        assert_eq!(res, true);
+        let res1 = tree.toggle("A");
+        assert_eq!(tree.switches.get("A").unwrap(), &false);
+        assert_eq!(res1, false);
+
+        let res2 = tree.toggle("B");
+        assert_eq!(tree.peek("B"), true);
+        let res3 = tree.toggle("B");
+        assert_eq!(tree.peek("B"), false);
     }
 }
