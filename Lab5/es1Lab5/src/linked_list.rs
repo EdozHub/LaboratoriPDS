@@ -135,14 +135,9 @@ pub mod list1 {
            }
         }
     }
-
-    // something that may be useful for the iterator implementation:
-    // let a = Some(T);
-    // let b = &a;
-    // match b { Some(i) => ... } // here i is a reference to T
 }
 
-pub mod List2 {
+pub mod list2 {
 
     pub struct Node<T> {
         elem: T,
