@@ -7,90 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e851f8f-6e6e-433e-b9fc-ab4f12fb73f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es1Lab4/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es1Lab4/target/.rustc_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/.rustc_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/.fingerprint/es3Lab4-0111f66fe5fbf373/output-test-bin-es3Lab4" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/.fingerprint/es3Lab4-0111f66fe5fbf373/output-test-bin-es3Lab4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/deps/es3Lab4-0111f66fe5fbf373.d" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/deps/es3Lab4-0111f66fe5fbf373.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/deps/es3Lab4-0111f66fe5fbf373.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/deps/es3Lab4-0111f66fe5fbf373.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/deps/es3Lab4-0111f66fe5fbf373.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/deps/es3Lab4-0111f66fe5fbf373.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/06q9fzicu5l6olmjxaj8nau87.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/0jmsua9bnelmru48u73qenoqt.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/0jrl4p4sv7xll6l8n8buvy9ru.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/0lv8igf66ufz8trck65g4297i.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/0s41us4ubpwgoreo8healhbl2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/0sb3ix169zs7olzx79q2omshr.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/0telmyogflkszlvr7lsdkdygs.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/0zorg9kuzylm1oln6tus7a66w.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/132ef74rbqpmtoef8ffq6wc9g.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/1aowpzmsuxmc3hidbrvixqkk1.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/1b82lbc4mmd9ngcw6xmg22kbl.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/24zpapkop4g8r0g3cltsdxkk1.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/25ec0s2fyrezkm341tmhi2jiz.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/2xjtlbaa911r853r0wjzgecy6.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/3bgdlnhl43ioqtliruxpospqt.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/3k3nfmaqrwdroatziogbkzyo5.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/40tddbva028vrf4hz22zzmz0t.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/4rdmhe5ibi4wfbcz2fthhjzfq.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/4x64lwezbxwer8dkujfq0x946.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/59rnotwcwajt4bfbdss1fvzxg.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/6btxike42j25tywfc4n9ebzz3.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/6lfpgc72sieg54222ubrgr3t0.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/6ov9jl8psvz8r3jtd1z13d6i4.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/6rcz6rh5asa7jitpg2q4xzewe.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/6s3ggiqh5beu0jycwbvqq3dog.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/6yr1fmmob38liukhscqthoa0h.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/7uhamo1nqs5b2dnxdqmu9sh6e.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/7uyvy956bfd2d4rspozv1us4b.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/81a4u4zah07bo5oj6d1en7c63.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/81nfwtq8d6915hl4gauw0a57c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/81xwy4x9shzwkp0tj74xyakgj.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/88icracdstywpk6lj7d8jlkq7.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/8b21oi2bgmalql382zreirlvw.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/8d0f4xbcvew8p8or2ojtgjzfw.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/8kpm731qt5xi16h3uzfh00zrg.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/8mrto9ok2vn87sxrrsvhw75ob.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/8tgeugq6am8569m4j4numte8t.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/8wag7h74zpr8xqat8bw5k2hbq.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/8ya4bndb99f7ymyzg2hojw7j2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/92f5w6vzcmqqyp3nes43xualt.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/9337ex84f4cxylv1eciujz5on.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/97cfjim31db9ifqc0bw38dair.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/9crcht6eard9kx9gn4eeezf2r.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/a2rceyz7wwb0c5elrctnvzid3.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/a4dzv9r2x6rdgmdukkn4d7o7d.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/a4z9dgmbck1qrdfc2azaq28qg.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/abg9mrmswwkb1f4kywbqhgf72.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/agqc9zpj31pjkmnvllpuf0t45.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/aj747jtg2tk6ealjyopjsej54.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/alrnaflzbwha3jfu1vzxjxx9w.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/an8a5uklbpzix1u3qfu41oaar.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/anz1choxpl6kjlpwr3c3c6q6n.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/aqnxh83l0iohitlzuluk2rw03.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/ar6o0h9kd39idvtlia783ts9e.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/ars1l4fi2wovaqslbuyw5ns32.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/b7fvdpyw2p6y1mbxu2m4t48lw.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/bhsmpzsrtsw0zm748a30jfdwg.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/bznvnnh3hgdqy1kuwge8al25z.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/c4twjkq6flyj9o1o1gi1xo59k.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/c6rqcbuokvwhh4czmzqsignil.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/cvh2t4xd9xnv9fhuh4i212zjt.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/dep-graph.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/ditzs011ozh3r3yuh78clnie8.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/dqqb3a13ou0t06d8pdc18l6i6.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/dwj5dp0h42odygnao87q2t6ty.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/dx5ctdb13zt6nub31rrnrk6w9.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/e10ym1znpjbhx5luag4wq4ghv.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/e4u7je42xag1u3n6zu811e2xv.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/e8kx4jipfi7yjzxp487jkami1.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/ehf9oj85brid8qpmk8myy44x0.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/eilni9wvysrdeiudtdixvyavo.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/eo4sandz2fcxdow6gywy2hlbp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/f5j14nmxmrcewen4p4419dwus.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/query-cache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/work-products.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w.lock" beforeDir="false" />
-    </list>
+    <list default="true" id="5e851f8f-6e6e-433e-b9fc-ab4f12fb73f6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,7 +109,7 @@
       <workItem from="1747244293582" duration="62000" />
       <workItem from="1747904335372" duration="220000" />
       <workItem from="1747904564146" duration="1128000" />
-      <workItem from="1747906901496" duration="847000" />
+      <workItem from="1747906901496" duration="1402000" />
     </task>
     <servers />
   </component>
