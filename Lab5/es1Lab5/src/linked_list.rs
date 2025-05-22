@@ -49,7 +49,7 @@ pub mod mem_inspect {
 }
 
 
-pub mod List1 {
+pub mod list1 {
     use std::mem::replace;
 
     #[derive(Clone)]
@@ -100,11 +100,12 @@ pub mod List1 {
             }
         }
 
-        // uncomment after having implemented the ListIter struct
         // return an interator over the list values
-        //fn iter(&self) -> ListIter<T> {
-        //    unimplemented!()
-        //}
+        fn iter(&self) -> ListIter<T> {
+            ListIter {
+                next: Some(&self.head),
+            }
+        }
 
         // take the first n elements of the list and return a new list with them
         pub fn take(&mut self, n: usize) -> List<T> {
@@ -117,17 +118,23 @@ pub mod List1 {
         }
     }
 
-    //struct ListIter {
-    //    // implement the iterator trait for ListIter
-    //}
-    //
-    //impl Iterator for ListIter {
-    //    //type Item = ...
-    //
-    //    fn next(&mut self) -> Option<Self::Item> {
-    //        unimplemented!()
-    //    }
-    //}
+    struct ListIter<'a, T> {
+        next: Option<&'a Node<T>>,
+    }
+
+    impl<'a, T> Iterator for ListIter<'a, T> {
+        type Item = &'a T;
+
+        fn next(&mut self) -> Option<Self::Item> {
+           match &self.next {
+               Some(Node::Cons(val, next)) => {
+                   Some(next)
+               }
+               Some(Node::Nil) => None,
+               None => None,
+           }
+        }
+    }
 
     // something that may be useful for the iterator implementation:
     // let a = Some(T);
