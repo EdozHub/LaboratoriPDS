@@ -94,7 +94,10 @@ pub mod List1 {
 
         // return a referece to the first element of the list
         pub fn peek(&self) -> Option<&T> {
-            unimplemented!()
+            match &self.head {
+                Node::Cons(val, _next) => Some(&val),
+                Node::Nil => None,
+            }
         }
 
         // uncomment after having implemented the ListIter struct
@@ -105,7 +108,12 @@ pub mod List1 {
 
         // take the first n elements of the list and return a new list with them
         pub fn take(&mut self, n: usize) -> List<T> {
-            unimplemented!()
+            let mut new_list = List::new();
+            for i in (0..n) {
+                let val = self.pop().unwrap();
+                new_list.push(val);
+            }
+            new_list
         }
     }
 
