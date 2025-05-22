@@ -8,6 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e851f8f-6e6e-433e-b9fc-ab4f12fb73f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/linked_list.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es1Lab4/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es1Lab4/target/.rustc_info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/.rustc_info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/.fingerprint/es3Lab4-0111f66fe5fbf373/output-test-bin-es3Lab4" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/.fingerprint/es3Lab4-0111f66fe5fbf373/output-test-bin-es3Lab4" afterDir="false" />
@@ -90,40 +91,56 @@
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/query-cache.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/work-products.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:test" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="CTY82tJj" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2x62djHKPRITmDnwauFQ44564Wv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.first.attach.projects": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Test mem_inspect.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Cargo.Test mem_inspect">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package es1Lab5 --bin es1Lab5" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -141,8 +158,10 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-      <option name="command" value="run" />
+    <configuration name="Test mem_inspect" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="buildProfileId" value="test" />
+      <option name="command" value="test --package es1Lab5 --bin es1Lab5 linked_list::mem_inspect" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
       <option name="channel" value="DEFAULT" />
@@ -157,6 +176,11 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Test mem_inspect" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
@@ -170,6 +194,9 @@
       <option name="presentableId" value="Default" />
       <updated>1747244292064</updated>
       <workItem from="1747244293582" duration="62000" />
+      <workItem from="1747904335372" duration="220000" />
+      <workItem from="1747904564146" duration="1128000" />
+      <workItem from="1747906901496" duration="444000" />
     </task>
     <servers />
   </component>
