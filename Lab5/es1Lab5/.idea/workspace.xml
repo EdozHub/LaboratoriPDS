@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e851f8f-6e6e-433e-b9fc-ab4f12fb73f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/linked_list.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es1Lab4/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es1Lab4/target/.rustc_info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/.rustc_info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/.fingerprint/es3Lab4-0111f66fe5fbf373/output-test-bin-es3Lab4" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/.fingerprint/es3Lab4-0111f66fe5fbf373/output-test-bin-es3Lab4" afterDir="false" />
@@ -91,9 +90,6 @@
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/query-cache.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w-bpbf2adnniv2e8842saawbpbv/work-products.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab4/es3Lab4/target/debug/incremental/es3Lab4-245cecky346vy/s-h7ceyzf1lt-142637w.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +192,7 @@
       <workItem from="1747244293582" duration="62000" />
       <workItem from="1747904335372" duration="220000" />
       <workItem from="1747904564146" duration="1128000" />
-      <workItem from="1747906901496" duration="444000" />
+      <workItem from="1747906901496" duration="847000" />
     </task>
     <servers />
   </component>
