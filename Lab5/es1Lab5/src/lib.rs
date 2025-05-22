@@ -150,7 +150,7 @@ pub mod list1 {
 
 }
 
-/*pub mod list2 {
+pub mod list2 {
     use std::ptr::null;
 
     pub struct Node<T> {
@@ -170,16 +170,16 @@ pub mod list1 {
     type NodeLink<T> = Option<Box<Node<T>>>;
 
     pub struct List<T> {
-        head: NodeLink<T>,
+        head: NodeLink<T>
     }
 
-    // for this implementattion, since we are using option, take a look at the take method in Option<T>.
+    // for this implementation, since we are using option, take a look at the take method in Option<T>.
     // It allows to move the value of the option into another option and replace it with None
     // let mut a = Some(5);
     // let b = a.take(); // a is now None and b is Some(5)
     impl<T> List<T> {
         pub fn new(&mut self) -> Self{
-            let head: NodeLink<T> = None;
+            let head: NodeLink<T> = None.into();
             List {
                 head
             }
@@ -240,4 +240,4 @@ pub mod dlist {
     // None.clone() -> None
 
 
-}*/
+}

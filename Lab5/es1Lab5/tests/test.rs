@@ -66,5 +66,10 @@ pub mod test_list1 {
 }
 
 pub mod test_list2 {
+    use es1Lab5::list2::List;
 
+    #[test]
+    pub fn test_new(){
+        let list=List::<i32>::new;
+    }
 }

@@ -44,6 +44,7 @@
     "Cargo.Run es1Lab5.executor": "Run",
     "Cargo.Test mem_inspect.executor": "Run",
     "Cargo.Test test_list1.executor": "Run",
+    "Cargo.Test test_list1::test_list_iterator.executor": "Run",
     "Cargo.Test test_list1::test_new.executor": "Run",
     "Cargo.Test test_list1::test_pop.executor": "Run",
     "Cargo.Test test_list1::test_push.executor": "Run",
@@ -64,7 +65,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Cargo.Test test_list1::test_list_iterator">
+  <component name="RunManager" selected="Cargo.Test mem_inspect">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package es1Lab5 --bin es1Lab5" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -169,9 +170,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test mem_inspect" />
         <item itemvalue="Cargo.Test test_list1::test_list_iterator" />
         <item itemvalue="Cargo.Test test_list1" />
-        <item itemvalue="Cargo.Test mem_inspect" />
         <item itemvalue="Cargo.Test test_list1::test_take_basic" />
         <item itemvalue="Cargo.Test test_list1::test_take" />
       </list>
@@ -193,7 +194,7 @@
       <workItem from="1747904564146" duration="1128000" />
       <workItem from="1747906901496" duration="4961000" />
       <workItem from="1747921086556" duration="3019000" />
-      <workItem from="1747924254305" duration="5642000" />
+      <workItem from="1747924254305" duration="6754000" />
     </task>
     <servers />
   </component>
