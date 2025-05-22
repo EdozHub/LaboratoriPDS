@@ -1,5 +1,7 @@
 #![allow(warnings)]
 
+use std::mem::replace;
+
 pub mod mem_inspect {
 
     // dump object info:
@@ -48,6 +50,7 @@ pub mod mem_inspect {
 
 
 pub mod List1 {
+    use std::mem::replace;
 
     #[derive(Clone)]
     pub enum Node<T> {
@@ -81,7 +84,12 @@ pub mod List1 {
 
         // pop the first element of the list and return it
         fn pop(&mut self) -> Option<T> {
-            unimplemented!()
+            match replace(&mut self.head, Node::Nil){
+                Node::Cons(val, next)=>{
+                    Some(val)
+                }
+                Node::Nil => None,
+            }
         }
 
         // return a referece to the first element of the list
