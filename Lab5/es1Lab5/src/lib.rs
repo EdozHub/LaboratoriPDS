@@ -1,7 +1,5 @@
 #![allow(warnings)]
 
-use std::mem::replace;
-
 pub mod mem_inspect {
 
     // dump object info:
@@ -53,20 +51,21 @@ pub mod list1 {
     use std::mem::replace;
 
     #[derive(Clone)]
-    pub enum Node<T> {
+    pub enum Node<T> where T: Clone {
         Cons(T, Box<Node<T>>),
         Nil,
     }
 
-    #[derive(Clone)]
-    pub struct List<T> {
+    pub struct List<T: std::clone::Clone> {
         head: Node<T>,
     }
 
-    impl<T> List<T> {
+    impl<T: std::clone::Clone> List<T> {
         pub fn new() -> Self {
             let head = Node::Nil;
-            List { head }
+            List {
+                head
+            }
         }
 
         // insert a new element at the beginning of the list
@@ -77,16 +76,18 @@ pub mod list1 {
         // 3. you can't copy it either, because Box can't be copied
         // solution: use mem::replace to move the value of self.head into a new variable and replace it with Nil
         // 4. let self.head point to the new created node
-        pub fn push(&mut self, elem: i32) {
+        pub fn push(&mut self, elem: T) {
             let old_head = self.head.clone();
             self.head = Node::Cons(elem, Box::new(old_head));
         }
 
         // pop the first element of the list and return it
-        fn pop(&mut self) -> Option<T> {
-            match replace(&mut self.head, Node::Nil){
-                Node::Cons(val, next)=>{
-                    Some(val)
+        pub fn pop(&mut self) -> Option<T> {
+            let old_head = replace(&mut self.head, Node::Nil);
+            match old_head {
+                Node::Cons(value, boxed_tail) => {
+                    self.head = *boxed_tail;
+                    Some(value)
                 }
                 Node::Nil => None,
             }
@@ -95,53 +96,74 @@ pub mod list1 {
         // return a referece to the first element of the list
         pub fn peek(&self) -> Option<&T> {
             match &self.head {
-                Node::Cons(val, _next) => Some(&val),
+                Node::Cons(val, next) => Some(&val),
                 Node::Nil => None,
             }
         }
 
         // return an interator over the list values
-        fn iter(&self) -> ListIter<T> {
-            ListIter {
-                next: Some(&self.head),
-            }
-        }
+        /*pub fn iter(&self) -> ListIter<'_ ,T> {
+            unimplemented!()
+        }*/
 
         // take the first n elements of the list and return a new list with them
         pub fn take(&mut self, n: usize) -> List<T> {
             let mut new_list = List::new();
-            for i in (0..n) {
-                let val = self.pop().unwrap();
+            let mut temp = Vec::new();
+
+            for _ in 0..n {
+                if let Some(val) = self.pop() {
+                    temp.push(val);
+                } else {
+                    break;
+                }
+            }
+
+            // Rimettiamo gli elementi nell'ordine corretto
+            for val in temp.into_iter().rev() {
                 new_list.push(val);
             }
+
             new_list
         }
+
     }
 
-    struct ListIter<'a, T> {
-        next: Option<&'a Node<T>>,
+    /*struct ListIter<'a, T: std::clone::Clone> {
+
     }
 
-    impl<'a, T> Iterator for ListIter<'a, T> {
+    impl<'a, T: std::clone::Clone> Iterator for ListIter<'a, T> {
         type Item = &'a T;
 
         fn next(&mut self) -> Option<Self::Item> {
            match &self.next {
-               Some(Node::Cons(val, next)) => {
-                   Some(next)
+               Some(Node::Cons(ref val, ref next)) => {
+                   self.next = Some(next);
+                   Some(val)
                }
                Some(Node::Nil) => None,
                None => None,
            }
         }
-    }
+    }*/
 }
 
-pub mod list2 {
+/*pub mod list2 {
+    use std::ptr::null;
 
     pub struct Node<T> {
         elem: T,
         next: NodeLink<T>,
+    }
+
+    impl<T> Node<T> {
+        fn new(elem: T, next: NodeLink<T>) -> Self {
+            Node {
+                elem,
+                next
+            }
+        }
     }
 
     type NodeLink<T> = Option<Box<Node<T>>>;
@@ -155,7 +177,23 @@ pub mod list2 {
     // let mut a = Some(5);
     // let b = a.take(); // a is now None and b is Some(5)
     impl<T> List<T> {
-        // same methods as List1
+        pub fn new(&mut self) -> Self{
+            let head: NodeLink<T> = None;
+            List {
+                head
+            }
+        }
+
+        pub fn push(&mut self, elem: i32) {
+            unimplemented!()
+        }
+
+        pub fn pop(&mut self) -> Option<i32> {
+            unimplemented!()
+        }
+        pub fn peek(&self) -> Option<&i32> {
+            unimplemented!()
+        }
     }
 }
 
@@ -201,4 +239,4 @@ pub mod dlist {
     // None.clone() -> None
 
 
-}
+}*/
