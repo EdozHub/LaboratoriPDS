@@ -8,12 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e851f8f-6e6e-433e-b9fc-ab4f12fb73f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/test.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/es1Lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/es1Lab5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/linked_list.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +43,12 @@
     "Cargo.Build es1Lab5.executor": "Run",
     "Cargo.Run es1Lab5.executor": "Run",
     "Cargo.Test mem_inspect.executor": "Run",
+    "Cargo.Test test_list1.executor": "Run",
     "Cargo.Test test_list1::test_new.executor": "Run",
     "Cargo.Test test_list1::test_pop.executor": "Run",
     "Cargo.Test test_list1::test_push.executor": "Run",
+    "Cargo.Test test_list1::test_take.executor": "Run",
+    "Cargo.Test test_list1::test_take_basic.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
@@ -65,24 +64,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Cargo.Test test_list1::test_take">
-    <configuration name="Build es1Lab5" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="build --package es1Lab5 --lib" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <option name="emulateTerminal" value="true" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Cargo.Test test_list1::test_list_iterator">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package es1Lab5 --bin es1Lab5" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -100,9 +82,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test test_list1::test_new" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="buildProfileId" value="test" />
-      <option name="command" value="test --package es1Lab5 --test test test_list1::test_new -- --exact" />
+    <configuration name="Test mem_inspect" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package es1Lab5 --bin es1Lab5 lib::mem_inspect" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -118,8 +99,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test test_list1::test_pop" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package es1Lab5 --test test test_list1::test_pop -- --exact" />
+    <configuration name="Test test_list1" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package es1Lab5 --test test test_list1" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -135,8 +116,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test test_list1::test_push" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package es1Lab5 --test test test_list1::test_push -- --exact" />
+    <configuration name="Test test_list1::test_list_iterator" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package es1Lab5 --test test test_list1::test_list_iterator -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -169,13 +150,30 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test test_list1::test_take_basic" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package es1Lab5 --test test test_list1::test_take_basic -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test test_list1::test_list_iterator" />
+        <item itemvalue="Cargo.Test test_list1" />
+        <item itemvalue="Cargo.Test mem_inspect" />
+        <item itemvalue="Cargo.Test test_list1::test_take_basic" />
         <item itemvalue="Cargo.Test test_list1::test_take" />
-        <item itemvalue="Cargo.Test test_list1::test_pop" />
-        <item itemvalue="Cargo.Test test_list1::test_push" />
-        <item itemvalue="Cargo.Test test_list1::test_new" />
-        <item itemvalue="Cargo.Build es1Lab5" />
       </list>
     </recent_temporary>
   </component>
@@ -195,11 +193,22 @@
       <workItem from="1747904564146" duration="1128000" />
       <workItem from="1747906901496" duration="4961000" />
       <workItem from="1747921086556" duration="3019000" />
-      <workItem from="1747924254305" duration="3046000" />
+      <workItem from="1747924254305" duration="5642000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

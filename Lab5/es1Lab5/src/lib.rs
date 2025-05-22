@@ -102,9 +102,11 @@ pub mod list1 {
         }
 
         // return an interator over the list values
-        /*pub fn iter(&self) -> ListIter<'_ ,T> {
-            unimplemented!()
-        }*/
+        pub fn iter(&self) -> ListIter<T> {
+            ListIter {
+                next: Some(&self.head)
+            }
+        }
 
         // take the first n elements of the list and return a new list with them
         pub fn take(&mut self, n: usize) -> List<T> {
@@ -123,30 +125,29 @@ pub mod list1 {
             for val in temp.into_iter().rev() {
                 new_list.push(val);
             }
-
             new_list
         }
 
     }
 
-    /*struct ListIter<'a, T: std::clone::Clone> {
-
+    pub struct ListIter<'a, T: Clone> {
+        next: Option<&'a Node<T>>,
     }
 
-    impl<'a, T: std::clone::Clone> Iterator for ListIter<'a, T> {
+    impl<'a, T: Clone> Iterator for ListIter<'a, T> {
         type Item = &'a T;
 
         fn next(&mut self) -> Option<Self::Item> {
-           match &self.next {
-               Some(Node::Cons(ref val, ref next)) => {
-                   self.next = Some(next);
-                   Some(val)
-               }
-               Some(Node::Nil) => None,
-               None => None,
-           }
+            match self.next {
+                Some(Node::Cons(value, next_node)) => {
+                    self.next = Some(next_node);
+                    Some(value)
+                }
+                _ => None,
+            }
         }
-    }*/
+    }
+
 }
 
 /*pub mod list2 {

@@ -51,6 +51,18 @@ pub mod test_list1 {
         assert_eq!(taken.pop(), Some(2));
         assert_eq!(taken.pop(), None);
     }
+
+    #[test]
+    fn test_list_iterator() {
+        let mut list = List::new();
+        list.push(1);
+        list.push(2);
+        list.push(3); // La lista è: 3 → 2 → 1
+
+        let collected: Vec<_> = list.iter().cloned().collect(); // da [&T] a T
+
+        assert_eq!(collected, vec![3, 2, 1]);
+    }
 }
 
 pub mod test_list2 {
