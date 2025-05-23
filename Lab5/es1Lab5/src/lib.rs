@@ -153,6 +153,7 @@ pub mod list1 {
 pub mod list2 {
     use std::ptr::null;
 
+    #[derive(Clone)]
     pub struct Node<T> {
         elem: T,
         next: NodeLink<T>,
@@ -169,6 +170,7 @@ pub mod list2 {
 
     type NodeLink<T> = Option<Box<Node<T>>>;
 
+    #[derive(Clone)]
     pub struct List<T> {
         head: NodeLink<T>
     }
@@ -178,22 +180,22 @@ pub mod list2 {
     // let mut a = Some(5);
     // let b = a.take(); // a is now None and b is Some(5)
     impl<T> List<T> {
-        pub fn new(&mut self) -> Self{
-            let head: NodeLink<T> = None.into();
+        pub fn new() -> Self{
             List {
-                head
+                head: None
             }
         }
 
-        pub fn push(&mut self, elem: i32) {
-            unimplemented!()
+        pub fn push(&mut self, elem: T) {
+            let old_head = self.head.take();
+            self.head = Some(Box::new(Node::new(elem, old_head)))
         }
 
-        pub fn pop(&mut self) -> Option<i32> {
+        pub fn pop(&mut self) -> Option<T> {
             unimplemented!()
         }
-        pub fn peek(&self) -> Option<&i32> {
-            unimplemented!()
+        pub fn peek(&self) -> Option<&T> {
+            self.head.as_ref().map(|node| &node.elem)
         }
     }
 }

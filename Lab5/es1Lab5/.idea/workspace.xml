@@ -10,6 +10,8 @@
     <list default="true" id="5e851f8f-6e6e-433e-b9fc-ab4f12fb73f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +52,8 @@
     "Cargo.Test test_list1::test_push.executor": "Run",
     "Cargo.Test test_list1::test_take.executor": "Run",
     "Cargo.Test test_list1::test_take_basic.executor": "Run",
+    "Cargo.Test test_list2::test_new.executor": "Run",
+    "Cargo.Test test_list2::test_push.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
@@ -65,7 +69,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Cargo.Test mem_inspect">
+  <component name="RunManager" selected="Cargo.Test test_list2::test_push">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package es1Lab5 --bin es1Lab5" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -134,8 +138,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test test_list1::test_take" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package es1Lab5 --test test test_list1::test_take -- --exact" />
+    <configuration name="Test test_list2::test_new" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package es1Lab5 --test test test_list2::test_new -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -151,8 +155,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test test_list1::test_take_basic" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package es1Lab5 --test test test_list1::test_take_basic -- --exact" />
+    <configuration name="Test test_list2::test_push" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package es1Lab5 --test test test_list2::test_push -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -170,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test test_list2::test_push" />
+        <item itemvalue="Cargo.Test test_list2::test_new" />
         <item itemvalue="Cargo.Test mem_inspect" />
         <item itemvalue="Cargo.Test test_list1::test_list_iterator" />
         <item itemvalue="Cargo.Test test_list1" />
-        <item itemvalue="Cargo.Test test_list1::test_take_basic" />
-        <item itemvalue="Cargo.Test test_list1::test_take" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +198,8 @@
       <workItem from="1747904564146" duration="1128000" />
       <workItem from="1747906901496" duration="4961000" />
       <workItem from="1747921086556" duration="3019000" />
-      <workItem from="1747924254305" duration="6754000" />
+      <workItem from="1747924254305" duration="7056000" />
+      <workItem from="1747988001429" duration="2098000" />
     </task>
     <servers />
   </component>

@@ -72,4 +72,14 @@ pub mod test_list2 {
     pub fn test_new(){
         let list=List::<i32>::new;
     }
+
+    #[test]
+    pub fn test_push(){
+        let mut list = List::new();
+        list.push(1);
+        list.push(2);
+        list.push(3);
+        let dato = list.peek().unwrap();
+        assert_eq!(*dato, 3);
+    }
 }
