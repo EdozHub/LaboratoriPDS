@@ -56,9 +56,38 @@ pub fn find_primes_1(limit: u64, n_threads: u64) -> Vec<u64> {
     primes
 }
 
+//APPROCCIO 2
+pub fn find_primes_2(limit: u64, n_threads: u64) -> Vec<u64> {
+    let mut handles = vec![];
+    for i in 0..n_threads {
+        let handle = std::thread::spawn(move || {
+            let mut local_primes = Vec::new();
+            let mut num = i;
+            loop {
+                if num > limit {
+                    break;
+                }
+                if is_prime(num) {
+                    local_primes.push(num);
+                }
+                num += n_threads;
+            }
+            local_primes
+        });
+        handles.push(handle);
+    }
+    let mut all_primes = Vec::new();
+    for handle in handles {
+        let mut local = handle.join().unwrap();
+        all_primes.append(&mut local);
+    }
+    all_primes.sort();
+    all_primes
+}
+
 fn main() {
     let now = Instant::now();
-    let primes = find_primes_1(100, 8);
+    let primes = find_primes_2(100, 8);
     let elapsed = now.elapsed();
     println!("Found {} primes in {:?}", primes.len(), elapsed);
 }
