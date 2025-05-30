@@ -1,0 +1,29 @@
+# Target directory (build output)
+target/
+
+# Cargo specific
+**/Cargo.lock    # Se stai creando una libreria, puoi ignorarlo
+**/Cargo.toml.orig
+
+# IDEs and editors
+.idea/           # Configurazioni di progetto di RustRover / JetBrains
+
+# Backup / swap files
+*.swp
+*.swo
+*~
+*.bak
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Optional: ignorare output di test, benchmark o altri tool temporanei
+*.profraw
